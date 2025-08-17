@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>FLYY REFLECTIONS — Digital Art Studio</title>
+  <meta name="description" content="Custom AI-powered paint & sip events, luxe memorial art, and fully outsourced merch — Flyy Reflections."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Ctext y='48' x='6' font-size='48'%3E%F0%9F%92%A5%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <!-- Top Nav -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <h1>FLYY REFLECTIONS</h1>
+          <div class="tag">digital art studio · 11:11 energy</div>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <a href="#kits" class="btn" style="background:none">Kits</a>
+        <a href="#events" class="btn" style="background:none">Events</a>
+        <a href="#about" class="btn" style="background:none">About</a>
+        <a href="#contact" class="btn">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <h2>Luxury paint & sip… fully customized… zero hassle</h2>
+      <p>Cracked mirror truth… butterfly wing left… angel wing right… chrome teardrops… hot-pink spray glow. You bring the people… we bring the vibe. AI designs your stencil pack, vendors ship supplies, and you walk out feeling like an artist.</p>
+      <div class="pills">
+        <span class="pill">No inventory</span>
+        <span class="pill">Auto-generated stencils</span>
+        <span class="pill">POD merch</span>
+        <span class="pill">Drops at 11:11</span>
+      </div>
+      <div style="margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <a href="#events" class="btn">Request an Event</a>
+        <a href="#kits" class="btn" style="border-style:dashed;background:transparent">Order a Kit</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Kits -->
+  <section id="kits" class="section">
+    <div class="container">
+      <div class="header-row">
+        <h3>Digital Paint-By-Numbers Kits</h3>
+        <p class="sub">Beginner-friendly… gallery-ready. Your story… our stencil… shipped direct.</p>
+      </div>
+
+      <div class="grid cards">
+        <article class="card">
+          <h4>Classic Kit</h4>
+          <p>1 custom design · numbered stencil · paints · brushes · 12×16 canvas · rhinestone accents optional.</p>
+          <div class="badge">$99</div>
+        </article>
+        <article class="card">
+          <h4>Legacy Kit</h4>
+          <p>Memorial portrait · chrome tear motif · angel/butterfly cues · certificate of authenticity.</p>
+          <div class="badge">$149</div>
+        </article>
+        <article class="card">
+          <h4>Signature Set</h4>
+          <p>Two-piece mirror diptych · gold leaf add-on · bonus digital print for lockscreen.</p>
+          <div class="badge">$199</div>
+        </article>
+      </div>
+
+      <div style="margin-top:14px">
+        <button class="btn" onclick="toggleForm('kitForm')">Order a Kit</button>
+      </div>
+
+      <form id="kitForm" class="form hidden" onsubmit="submitKit(event)">
+        <div class="grid two">
+          <label class="label">Full name<input class="input" name="name" required></label>
+          <label class="label">Email<input class="input" type="email" name="email" required></label>
+          <label class="label">Phone<input class="input" type="tel" name="phone"></label>
+          <label class="label">Shipping address<textarea class="input" name="address" rows="2" required></textarea></label>
+        </div>
+        <label class="label">Theme / who we’re honoring<textarea class="input" name="theme" rows="3" placeholder="Names, symbols, colors, vibe words…"></textarea></label>
+        <div class="grid two">
+          <label class="label">Extras
+            <select class="input" name="extras">
+              <option value="none">None</option>
+              <option value="rhinestones">Rhinestones</option>
+              <option value="glow">Glow-in-the-dark</option>
+              <option value="gold-leaf">Gold leaf</option>
+            </select>
+          </label>
+          <label class="label">Target date<input class="input" type="date" name="date"></label>
+        </div>
+        <button type="submit" class="btn">Submit Kit Order</button>
+        <div id="kitSuccess" class="badge hidden">Got it. You’ll receive a proof within 24 hours.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section id="events" class="section">
+    <div class="container">
+      <div class="header-row">
+        <h3>Private Paint & Sip Events</h3>
+        <p class="sub">Two sessions a week… fully tailored… we handle everything end-to-end.</p>
+      </div>
+
+      <div class="grid cards">
+        <article class="card">
+          <h4>Silver</h4>
+          <p>90 min · up to 20 guests · 1 custom design · pre-printed poster boards · recap email.</p>
+          <div class="badge">$1,000 + $25/guest</div>
+        </article>
+        <article class="card">
+          <h4>Gold</h4>
+          <p>2 hrs · up to 40 guests · canvases · neon crest backdrop · welcome signage · time-lapse reel.</p>
+          <div class="badge">$1,750 + $30/guest</div>
+        </article>
+        <article class="card">
+          <h4>Platinum</h4>
+          <p>3 hrs · up to 60 guests · two design options · VIP décor · framed office print for host.</p>
+          <div class="badge">$2,300 + $35/guest</div>
+        </article>
+      </div>
+
+      <div style="margin-top:14px">
+        <button class="btn" onclick="toggleForm('eventForm')">Request an Event</button>
+      </div>
+
+      <form id="eventForm" class="form hidden" onsubmit="submitEvent(event)">
+        <div class="grid two">
+          <label class="label">Full name<input class="input" name="name" required></label>
+          <label class="label">Email<input class="input" type="email" name="email" required></label>
+          <label class="label">Phone<input class="input" type="tel" name="phone"></label>
+          <label class="label">Company / team<input class="input" name="company"></label>
+        </div>
+        <div class="grid three">
+          <label class="label">Date<input class="input" type="date" name="eventDate" required></label>
+          <label class="label">Time<input class="input" type="time" name="time" required></label>
+          <label class="label">Headcount<input class="input" type="number" name="guests" min="6" max="120" required></label>
+        </div>
+        <div class="grid two">
+          <label class="label">Venue address<textarea class="input" name="venue" rows="2" required></textarea></label>
+          <label class="label">Brand colors<input class="input" name="colors" placeholder="#FF2EBF, #8FD3FF, onyx"></label>
+        </div>
+        <label class="label">Theme / notes<textarea class="input" name="notes" rows="3" placeholder="Symbols to include, décor notes, names to honor, etc."></textarea></label>
+        <label class="label" style="display:flex;align-items:center;gap:10px"><input id="rush" type="checkbox" name="rush"> Rush event (priority design & logistics)</label>
+        <button type="submit" class="btn">Submit Event Request</button>
+        <div id="eventSuccess" class="badge hidden">Request received. We’ll confirm your proof window via email.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="header-row">
+        <h3>About Me</h3>
+        <p class="sub">Founder · Creative Director · Heart behind the cracked mirror</p>
+      </div>
+
+      <div class="columns">
+        <article class="panel">
+          <h4 style="margin:0 0 8px;color:#fff">Hey, I’m BJ</h4>
+          <p>I turn grief into glam and memories into living artwork. Flyy Reflections is my love letter to legacy — bold lines, clean shine, chrome tears, soft pink glow, baby-blue rim. We honor our people with beauty, jokes, and stubborn hope.</p>
+          <p>My studio blends AI precision with human heart. Every class feels cinematic… every canvas tells a story. Beginner-friendly stencils, luxe details, and that 11:11 alignment.</p>
+          <p>Most of all, this is community. We celebrate wins, hold space for the hard, and leave with something worthy of your wall.</p>
+          <div class="socials" style="margin-top:12px">
+            <a class="btn" href="mailto:info@flyyreflections.com">Email</a>
+            <a class="btn" target="_blank" href="https://instagram.com/flyyreflections">Instagram</a>
+            <a class="btn" target="_blank" href="https://tiktok.com/@flyyreflections">TikTok</a>
+            <a class="btn" target="_blank" href="https://pinterest.com/flyyreflections">Pinterest</a>
+          </div>
+        </article>
+
+        <aside class="panel small">
+          <p><strong>Signature cues</strong> · cracked mirror crest, butterfly left, angel right, chrome teardrops, hot-pink spray, baby-blue rim, drops at 11:11.</p>
+          <p><strong>Services</strong> · custom kits, private paint & sips, memorial portraits, POD merch.</p>
+          <p><strong>Promise</strong> · elegant, respectful, cinematic… beginner-friendly but never basic.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="header-row">
+        <h3>Contact & Social</h3>
+        <p class="sub">Talk to me nice. Collabs, bookings, custom builds.</p>
+      </div>
+
+      <div class="contact-cards">
+        <a class="card link-card" href="mailto:info@flyyreflections.com"><h4>Email</h4><p>info@flyyreflections.com</p></a>
+        <a class="card link-card" target="_blank" href="https://instagram.com/flyyreflections"><h4>Instagram</h4><p>@flyyreflections</p></a>
+        <a class="card link-card" target="_blank" href="https://tiktok.com/@flyyreflections"><h4>TikTok</h4><p>@flyyreflections</p></a>
+        <a class="card link-card" target="_blank" href="https://pinterest.com/flyyreflections"><h4>Pinterest</h4><p>pinterest.com/flyyreflections</p></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© Flyy Reflections · All Rights Reserved · Drops at 11:11</div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
