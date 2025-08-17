@@ -160,3 +160,55 @@ Or use GitHub’s Create/Upload file to edit directly from your browser.
 
 © Flyy Reflections. All rights reserved.
 Client designs, artwork, and brand elements are proprietary to Flyy Reflections.
+
+// api/webhook.js (POST only)
+export default async function handler(req, res) {
+  if (req.method !== 'POST') return res.status(405).json({ ok:false, error:'POST only' });
+
+  const payload = req.body ?? {};
+
+  // Optional: auto-generate art for kit orders
+  try {
+    if (payload?.type === 'kit_order' && payload?.payload?.theme) {
+      const base = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://flyyreflections.vercel.app';
+      await fetch(`${base}/api/auto`, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+          prompt: `Flyy Reflections style stencil/portrait. Theme: ${payload.payload.theme}. Symbols: cracked mirror, butterfly wing left, angel wing right, chrome teardrops, hot pink neon, baby blue rim.`
+        })
+      });
+    }
+  } catch {}
+
+  // Optional: forward to Zapier/Make
+  let forwarded = null;
+  if (process.env.FORWARD_URL) {
+    try {
+      const r = await fetch(process.env.FORWARD_URL, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify(payload)
+      });
+      forwarded = r.status;
+    } catch { forwarded = 'error'; }
+  }
+
+  return res.status(200).json({ ok:true, received: payload, forwarded });
+}
+
+POST /api/auto
+
+{
+  "prompt": "Your rich prompt aligned to the brand",
+  "address": {
+    "first_name": "—", "last_name": "—", "email": "—",
+    "phone": "—", "country": "US", "region": "TX",
+    "address1": "—", "city": "—", "zip": "—"
+  },
+  "productId": "printify-template-or-null",
+  "variantId": 1234,
+  "meta": {}
+}
+
+{ "ok": true, "imageUrl": "https://...", "order": { "...": "..." } }
