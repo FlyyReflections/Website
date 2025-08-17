@@ -1,0 +1,11 @@
+/
+├─ 01-vercel.json
+├─ 02-index.html
+├─ api/
+│  ├─ 03-webhook.js
+│  └─ 04-auto.js          ← optional (AI→Cloud→POD)
+└─ assets/
+   ├─ css/
+   │  └─ 05-styles.css
+   └─ js/
+      └─ 06-app.js
