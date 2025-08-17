@@ -212,3 +212,7 @@ POST /api/auto
 }
 
 { "ok": true, "imageUrl": "https://...", "order": { "...": "..." } }
+
+## Project Docs
+- 📖 [Contributing Guide](./CONTRIBUTING.md)
+- 🗓️ [Changelog](./CHANGELOG.md)
